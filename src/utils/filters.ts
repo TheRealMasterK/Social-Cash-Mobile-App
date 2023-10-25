@@ -1,6 +1,6 @@
 import { isEmpty } from "lodash";
 
-export const searchGiveAwaysByStartsWith = <T extends { id: string; name?: string; symbol: string }>(
+export const searchCoinsByStartsWith = <T extends { id: string; name?: string; symbol: string }>(
     coinData: T[],
     searchTerm: string
 ) => {
@@ -15,7 +15,7 @@ export const searchGiveAwaysByStartsWith = <T extends { id: string; name?: strin
     );
 };
 
-export const findGiveAwaysByFullText = <T extends { id: string; name?: string; symbol: string }>(
+export const findCoinsByFullText = <T extends { id: string; name?: string; symbol: string }>(
     coinData: T[],
     searchTerm: string
 ) => {
