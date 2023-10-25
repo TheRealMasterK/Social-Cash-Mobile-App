@@ -38,17 +38,17 @@ export default function TabLayout() {
       }}
     >
       <Tabs.Screen
-        name="settings-sharp"
+        name="Settings"
         options={{
-          title: "settings-sharp",
-          tabBarIcon: ({ color }) => <TabBarIconEvil name="settings-sharp" color={color} />,
+          title: "Settings",
+          tabBarIcon: ({ color }) => <TabBarIconIon name="settings" color={color} />,
         }}
       />
       <Tabs.Screen
-        name="coins"
+        name="GiveAwayScreen"
         options={{
-          title: "Competitions",
-          tabBarIcon: ({ color }) => <TabBarIcon name="dollar" color={color} />,
+          title: "Create",
+          tabBarIcon: ({ color }) => <TabBarIcon name="bitcoin" color={color} />,
         }}
       />
       <Tabs.Screen
@@ -62,7 +62,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="newsroom"
         options={{
-          title: "Chat",
+          title: "Newsroom",
           tabBarIcon: ({ color }) => <TabBarIconIon name="ios-megaphone-outline" color={color} />,
         }}
       />

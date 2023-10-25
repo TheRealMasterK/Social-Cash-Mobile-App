@@ -14,7 +14,7 @@ export async function fetchCoinData(currency: string = "usd") {
     );
 
     const [catResponse, coinResponse] = await Promise.all([catReq, coinReq]);
-    const [categoriesArray, coins]: [CoinCategoryData[], CoinData[]] = await Promise.all([
+    const [categoriesArray, giveAways]: [CoinCategoryData[], CoinData[]] = await Promise.all([
         catResponse.json(),
         coinResponse.json(),
     ]);
@@ -27,5 +27,5 @@ export async function fetchCoinData(currency: string = "usd") {
         }
     }
 
-    return { coins, categories };
+    return { giveAways, categories };
 }

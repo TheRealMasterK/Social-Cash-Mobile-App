@@ -31,7 +31,7 @@ This will create a build on the expo servers. We are currently setup to auto inc
 
 ## Building internal testing APK
 
-`eas build -p android --profile preview`
+`eas build -p android --settings preview`
 
 ## Release Build
 
