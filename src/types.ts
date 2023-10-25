@@ -30,9 +30,9 @@ export type CoinData = {
     filterRank?: number;
     /** Change color of coin bubble. Used for promotions. */
     bubbleColorOverride?: string | null | undefined;
-    /** Whether or not a coin should do the pulse animation, typically we pulse coins that match search */
+    /** Whether or not a coin should do the pulse animation, typically we pulse GiveAways that match search */
     pulse?: boolean;
-    /** When adding coins to animation this helps us control initial position */
+    /** When adding GiveAways to animation this helps us control initial position */
     initialPosition?: CoinInitialPosition;
 };
 

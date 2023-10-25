@@ -17,7 +17,7 @@ const Home = () => {
     const [perfPeriod, setPerfPeriod] = useState<PerformanceAccessor>("d");
     const [appDimensions, setDimensions] = useState<{ height: number; width: number; x: number; y: number }>();
 
-    const { loading, selectedCoins } = useCoinData();
+    const { loading, selectedGiveAways } = useCoinData();
 
     return (
         <View style={{ flex: 1, backgroundColor: "#F3F4F6" }}>
@@ -35,12 +35,12 @@ const Home = () => {
                     }}
                     style={{ flex: 1, backgroundColor: "#1B1917" }}
                 >
-                    {appDimensions == null || (selectedCoins.length === 0 && loading) ? (
+                    {appDimensions == null || (selectedGiveAways.length === 0 && loading) ? (
                         <View className="flex flex-1 justify-center items-center">
                             <LoadingPulse size={50} />
                         </View>
                     ) : (
-                        <Visualizer performancePeriod={perfPeriod} dimensions={appDimensions} coins={selectedCoins} />
+                        <Visualizer performancePeriod={perfPeriod} dimensions={appDimensions} GiveAways={selectedGiveAways} />
                     )}
                 </View>
             </SafeArea>

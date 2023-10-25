@@ -1833,7 +1833,7 @@
     command-exists "^1.2.8"
     envinfo "^7.7.2"
     execa "^5.0.0"
-    hermes-profile-transformer "^0.0.6"
+    hermes-Settings-transformer "^0.0.6"
     ip "^1.1.5"
     node-stream-zip "^1.9.1"
     ora "^5.4.1"
@@ -1852,7 +1852,7 @@
     "@react-native-community/cli-platform-android" "11.3.7"
     "@react-native-community/cli-tools" "11.3.7"
     chalk "^4.1.2"
-    hermes-profile-transformer "^0.0.6"
+    hermes-Settings-transformer "^0.0.6"
     ip "^1.1.5"
 
 "@react-native-community/cli-platform-android@11.3.7":
@@ -5251,9 +5251,9 @@ hermes-parser@0.12.0:
   dependencies:
     hermes-estree "0.12.0"
 
-hermes-profile-transformer@^0.0.6:
+hermes-Settings-transformer@^0.0.6:
   version "0.0.6"
-  resolved "https://registry.yarnpkg.com/hermes-profile-transformer/-/hermes-profile-transformer-0.0.6.tgz#bd0f5ecceda80dd0ddaae443469ab26fb38fc27b"
+  resolved "https://registry.yarnpkg.com/hermes-Settings-transformer/-/hermes-Settings-transformer-0.0.6.tgz#bd0f5ecceda80dd0ddaae443469ab26fb38fc27b"
   integrity sha512-cnN7bQUm65UWOy6cbGcCcZ3rpwW8Q/j4OP5aWRhEry4Z2t2aR1cjrbp0BS+KiBN0smvP1caBgAuxutvyvJILzQ==
   dependencies:
     source-map "^0.7.3"

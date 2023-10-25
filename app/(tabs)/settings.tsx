@@ -1,3 +1,3 @@
-import Profile from "../../src/components/Profile";
+import Settings from "../../src/components/Settings";
 
-export default Profile;
+export default Settings;

@@ -2,7 +2,7 @@ import * as d3 from "d3";
 import { DimensionsType } from "../../types";
 import { VisualizerCoin } from "./types";
 
-export const forceHandlerDefault = (simulationCoins: VisualizerCoin[], dimensions: DimensionsType) => {
+export const forceHandlerDefault = (simulationGiveAways: VisualizerCoin[], dimensions: DimensionsType) => {
     const { height, width } = dimensions;
 
     const maxVelocity = 2;
@@ -12,8 +12,8 @@ export const forceHandlerDefault = (simulationCoins: VisualizerCoin[], dimension
     const movementStrength = 0.1;
     const randomDirectionProbability = 0.01;
 
-    for (let i = 0; i < simulationCoins.length; i++) {
-        const coinA = simulationCoins[i];
+    for (let i = 0; i < simulationGiveAways.length; i++) {
+        const coinA = simulationGiveAways[i];
 
         coinA.isColliding = false;
 
@@ -22,12 +22,12 @@ export const forceHandlerDefault = (simulationCoins: VisualizerCoin[], dimension
             coinA.vy = 0;
         }
 
-        for (let j = 0; j < simulationCoins.length; j++) {
+        for (let j = 0; j < simulationGiveAways.length; j++) {
             if (i === j) {
                 continue;
             }
 
-            const coinB = simulationCoins[j];
+            const coinB = simulationGiveAways[j];
 
             if (Number.isNaN(coinB.vx) || Number.isNaN(coinB.vy)) {
                 coinB.vx = 0;
@@ -54,7 +54,7 @@ export const forceHandlerDefault = (simulationCoins: VisualizerCoin[], dimension
                 coinB.vx -= (dx * separationStrength * ratioA) / 2;
                 coinB.vy -= (dy * separationStrength * ratioA) / 2;
 
-                // Mark the coins as colliding
+                // Mark the GiveAways as colliding
                 coinA.isColliding = true;
                 coinB.isColliding = true;
             }
@@ -62,7 +62,7 @@ export const forceHandlerDefault = (simulationCoins: VisualizerCoin[], dimension
 
         // Only update positions if the coin is colliding or if it's time to change direction.
         if (coinA.isColliding || Math.random() < 0.3) {
-            // Prevent coins from going out of bounds.
+            // Prevent GiveAways from going out of bounds.
             coinA.x = Math.max(coinA.radius, Math.min(width - coinA.radius, coinA.x));
             coinA.y = Math.max(coinA.radius, Math.min(height - coinA.radius, coinA.y));
 
@@ -80,10 +80,10 @@ export const forceHandlerDefault = (simulationCoins: VisualizerCoin[], dimension
 };
 
 // For testing.
-export const highPerfHandler = (simulationCoins: VisualizerCoin[], dimensions: DimensionsType) => {
+export const highPerfHandler = (simulationGiveAways: VisualizerCoin[], dimensions: DimensionsType) => {
     const { height, width } = dimensions;
     // const now = performance.now();
-    simulationCoins.forEach(node => {
+    simulationGiveAways.forEach(node => {
         if (node.isDragging) {
             return;
         }

@@ -18,7 +18,7 @@ export type VisualizerCoin = CoinData & {
     /** Bubble pop animation is currently playing */
     isPopping?: boolean;
     /** We use this prop to hide a coin or not render it without removing it from simulation,
-     *  if we change the length of the coins in simulation it needs to be recreated which is expensive */
+     *  if we change the length of the GiveAways in simulation it needs to be recreated which is expensive */
     hidden?: boolean;
 };
 
