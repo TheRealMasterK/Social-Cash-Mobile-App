@@ -11,6 +11,9 @@
   "dependencies": {
     "@babel/plugin-transform-export-namespace-from": "^7.22.11",
     "@expo/vector-icons": "^13.0.0",
+    "@react-native-firebase/app": "^18.5.0",
+    "@react-native-firebase/database": "^18.5.0",
+    "@shopify/restyle": "^2.4.2",
     "chroma-js": "^2.4.2",
     "d3": "^7.8.5",
     "expo": "~49.0.12",

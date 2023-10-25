@@ -14,38 +14,34 @@ const TOP_BAR_HEIGHT = 50;
 const SafeArea = Platform.OS === "android" ? SafeAreaAndroid : SafeAreaView;
 
 const Home = () => {
-    const [perfPeriod, setPerfPeriod] = useState<PerformanceAccessor>("d");
-    const [appDimensions, setDimensions] = useState<{ height: number; width: number; x: number; y: number }>();
+  const [perfPeriod, setPerfPeriod] = useState<PerformanceAccessor>("d");
+  const [appDimensions, setDimensions] = useState<{ height: number; width: number; x: number; y: number }>();
 
-    const { loading, selectedGiveAways } = useCoinData();
+  const { loading, selectedCoins } = useCoinData();
 
-    return (
-        <View style={{ flex: 1, backgroundColor: "#F3F4F6" }}>
-            <StatusBar style="auto" />
-            <SafeArea style={{ flex: 1 }}>
-                <TopBar
-                    onPerformancePeriodSelected={setPerfPeriod}
-                    performancePeriod={perfPeriod}
-                    height={TOP_BAR_HEIGHT}
-                />
-                <View
-                    onLayout={e => {
-                        const { height, width, x, y } = e.nativeEvent.layout;
-                        setDimensions({ height, width, x, y });
-                    }}
-                    style={{ flex: 1, backgroundColor: "#1B1917" }}
-                >
-                    {appDimensions == null || (selectedGiveAways.length === 0 && loading) ? (
-                        <View className="flex flex-1 justify-center items-center">
-                            <LoadingPulse size={50} />
-                        </View>
-                    ) : (
-                        <Visualizer performancePeriod={perfPeriod} dimensions={appDimensions} giveAways={selectedGiveAways} />
-                    )}
-                </View>
-            </SafeArea>
+  return (
+    <View style={{ flex: 1, backgroundColor: "#F3F4F6" }}>
+      <StatusBar style="auto" />
+      <SafeArea style={{ flex: 1 }}>
+        <TopBar onPerformancePeriodSelected={setPerfPeriod} performancePeriod={perfPeriod} height={TOP_BAR_HEIGHT} />
+        <View
+          onLayout={e => {
+            const { height, width, x, y } = e.nativeEvent.layout;
+            setDimensions({ height, width, x, y });
+          }}
+          style={{ flex: 1, backgroundColor: "#1B1917" }}
+        >
+          {appDimensions == null || (selectedCoins.length === 0 && loading) ? (
+            <View className="flex flex-1 justify-center items-center">
+              <LoadingPulse size={50} />
+            </View>
+          ) : (
+            <Visualizer performancePeriod={perfPeriod} dimensions={appDimensions} coins={selectedCoins} />
+          )}
         </View>
-    );
+      </SafeArea>
+    </View>
+  );
 };
 
 export default Home;
