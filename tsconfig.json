@@ -1,12 +1,23 @@
 {
-  "extends": "expo/tsconfig.base",
+  "extends": "./tsconfig.common.json",
   "compilerOptions": {
-    "strict": true,
+    /* Basic Options */
+    "module": "esnext",
+    "target": "es2020",
+    "lib": ["es2020", "dom"],
+    "jsx": "react",
+    "noEmit": true,
+
+    /* Module Resolution Options */
+    "moduleResolution": "node",
+    "types": ["node"],
+
+    /* Other project specific options */
+    "experimentalDecorators": true,
+    "resolveJsonModule": true,
+
+    "allowJs": true,
+    // "importsNotUsedAsValues": "error", deprecated - consider finding an alternative
+
   },
-  "include": [
-    "**/*.ts",
-    "**/*.tsx",
-    ".expo/types/**/*.ts",
-    "expo-env.d.ts"
-  ]
 }
